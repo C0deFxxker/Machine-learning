@@ -1,0 +1,1 @@
+from bayes.bayes import *

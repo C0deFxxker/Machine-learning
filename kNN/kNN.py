@@ -14,17 +14,14 @@ def classify0(inX, dataSet, labels, k):
         arrDistances[i] = distances[i][0]
     # 将距离计算结果排序
     sortedDistindicies = argsort(arrDistances)
-
     # 统计前k个结果中，各个分类的出现频率
     classCount={}
     for i in range(k):
         voteIlabel = labels[sortedDistindicies[i]]
         classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1
-
     # 将分类按出现频率降序排序
     sortedClassCount = sorted(classCount.items(),
                               key=operator.itemgetter(1), reverse=True)
-
     # 频率出现最高的分类，就认为是预测结果
     return sortedClassCount[0][0]
 

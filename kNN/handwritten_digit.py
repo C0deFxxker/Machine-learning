@@ -39,9 +39,9 @@ for i in range(test_count):
     # k近邻算法（输入向量，训练样本集，标签向量，最近邻居的数目）
     test = kNN.classify0(mat(test_data_set[i]).astype("float64"), mat(train_data_set).astype("float64"), train_data_set_result, 2)
     if test != test_result[i]:
-        print("第%d次测试：结果错误，测试结果为%d，正确答案是%d\n\t测试数：%d, 正确数：%d, 失败数：%d，正确率：%f" \
+        print("第%d次测试：结果错误，测试结果为%d，正确答案是%d\n\t测试数：%d, 正确数：%d, 失败数：%d，正确率：%f"
               % (i + 1, test, test_result[i], i + 1, success_count, (i+1)-success_count, success_count/(i+1)))
     else:
         success_count += 1
-        print("第%d次测试：结果正确，测试结果为%d\n\t测试数：%d, 正确数：%d, 失败数：%d，正确率：%f" \
+        print("第%d次测试：结果正确，测试结果为%d\n\t测试数：%d, 正确数：%d, 失败数：%d，正确率：%f"
               % (i + 1, test, i + 1, success_count, (i + 1) - success_count, success_count / (i + 1)))
